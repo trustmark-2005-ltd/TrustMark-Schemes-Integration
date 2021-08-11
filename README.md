@@ -21,7 +21,7 @@ There is a single endpoint to submit the data for each business.
 
 The business data should be self explanatory.
 
-Trades data includes just the current active trades for the business with the `tradeCode` a value from the TrustMark data dictionary https://www.trustmark.org.uk/ourservices/data-warehouse/data-dictionary and the `certificateId` an optional value to provide the Registered Certificate Id.
+Trades data includes just the current active trades for the business with the `tradeCode` a value from the TrustMark data dictionary https://www.trustmark.org.uk/ourservices/data-warehouse/data-dictionary and the `certificateId` an optional value to provide the Registered Certificate Id for that trade.
 
 As part of the header for the body:
 
@@ -79,12 +79,16 @@ You will be able to see all the data submitted within your login in the Scheme P
 }
 ```
 
-### DELETE /DeregisterBusiness
+### PUT /DeregisterBusiness
 
 Allows you to deregister a business so they are no longer active.
 
 ```json
 {
+  "version": "2021-07-31",
+  "schemeIdentity": {
+    "trustmarkId": "api-30393a10-391b-4bf3-99e4-9748ea5ac4c8"
+  },
   "membershipReference": "string",
   "reason": "string",
   "deregisterDate": "2021-08-10T21:04:45.645Z"
