@@ -28,54 +28,77 @@ As part of the header for the body:
 * `version` should be "2021-07-31"
 * `membershipReference` should contain the unique your scheme reference for this business
 * `action` must be a value from `CREATE_PENDING`, `SUBMIT`
-*  `schemeIdentity.trustmarkId` you will find this value as a pair for the API Key from the Scheme Portal
+* `schemeIdentity.trustmarkId` you will find this value as a pair for the API Key from the Scheme Portal
 
 You will be able to see all the data submitted within your login in the Scheme Portal.
 
 ```json
 {
-  "version": "string",
-  "membershipReference": "string",
-  "action": "string",
+  "version": "2021-07-31",
+  "membershipReference": "T0004",
+  "action": "SUBMIT",
   "schemeIdentity": {
-    "trustmarkId": "string"
+    "trustmarkId": "api-30393a10-391b-4bf3-99e4-9748ea5ac4c8"
   },
   "business": {
-    "registeredCompanyName": "string",
-    "address1": "string",
-    "address2": "string",
-    "town": "string",
-    "county": "string",
-    "postCode": "string",
-    "country": "string",
-    "email": "string",
-    "primaryContactNumber": "string",
-    "website": "string",
-    "phone": "string",
-    "fax": "string",
-    "registeredCompanyNumber": "string",
+    "registeredCompanyName": "TrustMark (2005) Limited",
+    "address1": "Arena Business Centre, The Square",
+    "address2": "Basing View",
+    "town": "Basingstoke",
+    "county": "Hampshire",
+    "postCode": "RG21 4EB",
+    "country": "England",
+    "email": "contact@trustmark.org.uk",
+    "primaryContactNumber": "0333 555 1234",
+    "website": "https://www.trustmark.org.uk/aboutus/contact-us",
+    "phone": "0333 555 1234",
+    "fax": "0333 555 1235",
+    "registeredCompanyNumber": "05480144",
     "trades": [
       {
-        "tradeCode": 0,
-        "certificateId": "string"
+        "tradeCode": 22,
+        "certificateId": "MYREF022"
+      },
+      {
+        "tradeCode": 24,
+        "certificateId": "ABC345"
       }
     ],
     "contacts": [
       {
-        "firstName": "string",
-        "lastName": "string",
-        "email": "string",
-        "primaryContactNumber": "string",
-        "jobTitle": "string",
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "johndoe@trustmark.org.uk",
+        "primaryContactNumber": "0333 555 1234",
+        "jobTitle": "",
         "isFinanceContact": true,
-        "isComplianceContact": true,
+        "isComplianceContact": false,
         "isOperationContact": true,
-        "piNumber": "string"
+        "piNumber": ""
       }
     ],
-    "tmln": "string",
-    "notes": "string"
+    "notes": "Imported via API"
   }
+}
+```
+
+Example response with status code 201 Created
+
+```json
+{
+    "receipt": {
+        "transactionDt": "2021-08-12T10:23:43.6216394Z",
+        "schemeId": "testscheme",
+        "receiptId": "rei-8be32e59-abc0-4a75-b198-7587d4832259",
+        "outcomes": [
+            "Updated",
+            "Submitted"
+        ],
+        "schemeBusinessId": "sbu-aa7a6cf6-dcd8-4e98-908e-1dc4b0266368"
+    },
+    "request": {
+        ...
+    }
 }
 ```
 
@@ -86,12 +109,30 @@ Allows you to deregister a business so they are no longer active.
 ```json
 {
   "version": "2021-07-31",
+  "membershipReference": "T0004",
   "schemeIdentity": {
     "trustmarkId": "api-30393a10-391b-4bf3-99e4-9748ea5ac4c8"
   },
-  "membershipReference": "string",
-  "reason": "string",
-  "deregisterDate": "2021-08-10T21:04:45.645Z"
+  "reason": "Suspension"
+}
+```
+
+Example response with status code 201 Created
+
+```json
+{
+    "receipt": {
+        "transactionDt": "2021-08-13T10:47:52.3428798Z",
+        "schemeId": "testscheme",
+        "receiptId": "rei-b3ca93b0-1c69-40f1-9911-7abcaa63f693",
+        "outcomes": [
+            "Deregistered"
+        ],
+        "schemeBusinessId": "sbu-aa7a6cf6-dcd8-4e98-908e-1dc4b0266368"
+    },
+    "request": {
+        ...
+    }
 }
 ```
 
