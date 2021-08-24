@@ -7,7 +7,7 @@ You must have a Scheme Portal account which will give you access to create an AP
 
 ## Key Concepts
 
-As a scheme you will be able to submit business data of your registered members and the trades that they currently hold. Provision of this data will ensure that businesses are allocated a TrustMark Licence Number (TMLN) and can lodge measures of work delivered.
+As a scheme you will be able to submit business data of your registered members and the trades that they currently hold. Provision of this data will ensure that businesses are allocated a TrustMark Licence Number (TMLN), can be listed on the TrustMark website and can lodge work into the TrustMark Data Warehouse.
 
 You can deregister a business therefore ensuring they can no longer lodge work and they fall out of your billing cycle.
 
@@ -21,7 +21,7 @@ There is a single endpoint to submit the data for each business.
 
 The business data should be self explanatory.
 
-Trades data includes just the current active trades for the business with the `tradeCode` a value from the TrustMark data dictionary https://www.trustmark.org.uk/ourservices/data-warehouse/data-dictionary and the `certificateId` an optional value to provide the Registered Certificate Id for that trade.
+Trades data includes just the current active trades for the business with the `tradeCode` a value from the TrustMark data dictionary https://www.trustmark.org.uk/ourservices/data-warehouse/data-dictionary and the `certificateId` an optional value to provide the Registered Certificate Id for that trade (this includes any relevant regsitration or certification associated with the trade such as Gas Safe Registration No / MCS / PAS).
 
 As part of the header for the body:
 
@@ -48,7 +48,7 @@ You will be able to see all the data submitted within your login in the Scheme P
     "county": "Hampshire",
     "postCode": "RG21 4EB",
     "country": "England",
-    "email": "contact@trustmark.org.uk",
+    "email": "data@trustmark.org.uk",
     "primaryContactNumber": "0333 555 1234",
     "website": "https://www.trustmark.org.uk/aboutus/contact-us",
     "phone": "0333 555 1234",
