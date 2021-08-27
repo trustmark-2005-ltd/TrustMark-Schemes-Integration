@@ -143,3 +143,5 @@ Allow you to pull data back about the business by the membership reference you h
 ## Postman Examples
 
 If you are uncertain about an integration or just want to test the API endpoints - there is a Postman link available https://www.getpostman.com/collections/d0b53b9f74050888eeda. Just update the variables in the API Collection with your own tm-api-key which you can get from the API section from your Scheme Portal login.
+
+If you don't have Postman installed, you can get a copy here https://www.postman.com/
