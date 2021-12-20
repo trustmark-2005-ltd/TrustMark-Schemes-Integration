@@ -136,6 +136,16 @@ Example response with status code 201 Created
 }
 ```
 
+#### Reason
+
+One of the following reason values must be provided to deregister a business:
+
+*  Elective withdrawal from scheme
+*  Elective withdrawal from TrustMark
+*  Removal by scheme - not for Annex A reasons
+*  Suspension
+*  Expelled by scheme - Non-compliance reason
+
 ### GET /Business/MembershipReference/{membershipReference}
 
 Allow you to pull data back about the business by the membership reference you hold.
