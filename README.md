@@ -2,6 +2,7 @@
 
 ## Prerequisites
 
+You must be a TrustMark Scheme Provider to use this API.
 You must have a Scheme Portal account which will give you access to create an API Key to use with your requests.
 
 
