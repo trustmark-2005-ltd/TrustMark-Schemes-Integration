@@ -8,21 +8,21 @@ You must have a Scheme Portal account which will give you access to create an AP
 
 ## Key Concepts
 
-As a scheme you will be able to submit business data of your registered members and the trades that they currently hold. Provision of this data will ensure that businesses are allocated a TrustMark Licence Number (TMLN), can be listed on the TrustMark website and can lodge work into the TrustMark Data Warehouse.
+As a scheme, you will be able to submit business data of your registered members and the trades that they currently hold. Provision of this data will ensure that businesses are allocated a TrustMark Licence Number (TMLN), can be listed on the TrustMark website, and can lodge work into the TrustMark Data Warehouse.
 
 You can deregister a business therefore ensuring they can no longer lodge work and they fall out of your billing cycle.
 
 ## API Endpoints
 
-All API endpoints require an x-api-key and tm-api-key Header values, tm-api-key can be accessed via your Scheme Portal login and your x-api-key will be issued by TrustMark.
+All API endpoints require an `x-api-key` and `tm-api-key` Header values, `tm-api-key` can be accessed via your Scheme Portal login and your `x-api-key` will be issued by TrustMark.
 
 ### POST /SubmitBusiness
 
 There is a single endpoint to submit the data for each business.
 
-The business data should be self explanatory.
+The business data should be self-explanatory.
 
-Trades data includes just the current active trades for the business with the `tradeCode` a value from the TrustMark data dictionary https://www.trustmark.org.uk/ourservices/data-warehouse/data-dictionary and the `certificateId` an optional value to provide the Registered Certificate Id for that trade (this includes any relevant regsitration or certification associated with the trade such as Gas Safe Registration No / MCS / PAS).
+Trades data includes just the current active trades for the business with the `tradeCode` a value from the TrustMark data dictionary https://www.trustmark.org.uk/ourservices/data-warehouse/data-dictionary and the `certificateId` an optional value to provide the Registered Certificate Id for that trade (this includes any relevant registration or certification associated with the trade such as Gas Safe Registration No / MCS / PAS).
 
 As part of the header for the body:
 
@@ -149,10 +149,6 @@ One of the following reason values must be provided to deregister a business:
 
 ### GET /Business/MembershipReference/{membershipReference}
 
-Allow you to pull data back about the business by the membership reference you hold.
+It allows you to pull data about the business using the Membership Reference you hold.
 
-## Postman Examples
 
-If you are uncertain about an integration or just want to test the API endpoints - there is a Postman link available https://www.getpostman.com/collections/d0b53b9f74050888eeda. Just update the variables in the API Collection with your own tm-api-key which you can get from the API section from your Scheme Portal login.
-
-If you don't have Postman installed, you can get a copy here https://www.postman.com/
