@@ -18,7 +18,7 @@ All API endpoints require an `x-api-key` and `tm-api-key` Header values, `tm-api
 
 ### POST /SubmitBusiness
 
-There is a single endpoint to submit the data for each business.
+There is a single endpoint to submit the data for each active business.
 
 The business data should be self-explanatory.
 
